@@ -1,15 +1,14 @@
-ESX = nil
+QBCore = nil
 
 Citizen.CreateThread(function()
-	while ESX == nil do
-		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-		Citizen.Wait(0)
+	while QBCore == nil do
+		TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
+		Citizen.Wait(200)
 	end
 end)
 
  RegisterNetEvent('wht:cantaac')
  AddEventHandler('wht:cantaac', function() 
-    ESX.PlayerData = xPlayer
-    TriggerServerEvent("inventory:server:OpenInventory", "stash", "Cantan "..ESX.GetPlayerData().identifier)
-    TriggerEvent("inventory:client:SetCurrentStash","Cantan "..ESX.GetPlayerData().identifier)
+    TriggerServerEvent("inventory:server:OpenInventory", "stash", "Bag "..QBCore.Functions.GetPlayerData().citizenid)
+    TriggerEvent("inventory:client:SetCurrentStash","Bag "..QBCore.Functions.GetPlayerData().citizenid)
 end)
