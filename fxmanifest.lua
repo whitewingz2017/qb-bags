@@ -1,11 +1,8 @@
 fx_version "adamant"
-
 game "gta5"
 
 author 'Bag System'
-
-description 'Advanced Bag System For Fivemturk.com'
-
+description 'Advanced Bag System For qbus'
 version '1.0'
 
 client_scripts {
