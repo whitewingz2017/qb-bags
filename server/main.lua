@@ -1,16 +1,13 @@
--- Optional Bag For Fivemturk.com
-ESX = nil
+QBCore = nil
+TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
 
-TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-
-
-ESX.RegisterUsableItem('canta', function(source)
-  local src = source
-  local xPlayer = ESX.GetPlayerFromId(src)
-  if xPlayer.getQuantity('cantaanahtari') >= 1 then
-   TriggerClientEvent("wht:cantaac", source)
-  else
-    TriggerClientEvent('esx:showNotification', src, 'Üzerinde Bu Cantayi Acicak Anahtar Yok !')
-  end
+QBCore.Functions.CreateUseableItem('bag', function(source, item)
+    local src = source
+    local User = QBCore.Functions.GetPlayer(src)
+    if User.Functions.GetItemByName('bagkey').amount >= 1 then
+        TriggerClientEvent("wht:cantaac", src)
+    else
+        TriggerClientEvent('QBCore:Notify', src, 'There\'s no key to open this bag', 'error)
+    end
 end)
 
