@@ -1,5 +1,3 @@
-# wht-bag
-Advanced Bag System For Fivemturk.com
+# qb-bags
 
-1.Only works on qb inventory.
-2.Only work on ESX Framework.
+credits: https://github.com/WH1TE-36/wht-bag
